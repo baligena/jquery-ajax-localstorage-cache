@@ -1,10 +1,5 @@
-// github.com/paulirish/jquery-ajax-localstorage-cache
-// dependent on Modernizr's localStorage test
 
 $.ajaxPrefilter( function( options, originalOptions, jqXHR ) {
-
-  // Cache it ?
-  if ( !Modernizr.localstorage || !options.localCache ) return;
 
   var hourstl = options.cacheTTL || 5;
 

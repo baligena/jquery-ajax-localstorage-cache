@@ -1,0 +1,20 @@
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="./jquery-ajax-localstorage-cache.js"></script>
+
+<script>
+$.ajax({
+	url: 'url/link',
+	localCache: true,
+	cacheTTL :1,
+	cacheKey: 'nameOfCache',
+	dataType: 'json',
+	isCacheValid: function(){
+		return true;
+	},
+	success: function(reply){
+		alert('it worked')
+	}
+})
+
+
+</script>
