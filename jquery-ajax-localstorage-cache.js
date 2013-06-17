@@ -3,9 +3,13 @@ $.ajaxPrefilter( function( options, originalOptions, jqXHR ) {
 
   var hourstl = options.cacheTTL || 5;
 
-  var cacheKey = options.cacheKey || 
-                 options.url.replace( /jQuery.*/,'' ) + options.type + options.data;
-  
+  var cacheKey = options.cacheKey 
+
+  if(!cacheKey){
+    //exit script
+    return;
+  }
+    
   // isCacheValid is a function to validate cache
   if ( options.isCacheValid &&  ! options.isCacheValid() ){
     localStorage.removeItem( cacheKey );
